@@ -11,34 +11,28 @@ package fizbuzz;
 public class Fizbuzz {
 
     public static void main(String[] args) {
-        int i = 1;
-        while (i < 100) {
-            if (multipleDeCinq(i) && multipleDeSept(i)) {
+        for(int i = 1;i < 100; i++) {
+            if (multipleDe(i, 5) && multipleDe(i, 7)) {
                 System.out.println("FizBuzz");
-            } else if (multipleDeSept(i)) {
+            } else if (multipleDe(i, 7)) {
                 System.out.println("Buzz");
             } else if (finitParSept(i)) {
                 System.out.println("Buzz");
-            } else if (multipleDeCinq(i)) {
-                System.out.println("fiz");
+            } else if (multipleDe(i, 5)) {
+                System.out.println("Fiz");
             } else {
                 System.out.println(i);
             }
-            i++;
         }
 
     }
 
-    private static boolean multipleDeCinq(int i) {
-        return i % 5 == 0;
-    }
-
-    private static boolean multipleDeSept(int i) {
-        return i % 7 == 0;
-    }
-
     public static boolean finitParSept(int i) {
         return (i % 10 == 7);
+    }
+
+    private static boolean multipleDe(int i, int multiple) {
+        return i % multiple == 0;
     }
 
 }
